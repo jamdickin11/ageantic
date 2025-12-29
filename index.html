@@ -536,6 +536,50 @@
             border: 2px solid rgba(0, 243, 255, 0.3);
         }
 
+        /* Travel trends section */
+        .trends-section {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 5%;
+        }
+
+        .trends-article {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .article-header {
+            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .trend-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .trend-item {
+            padding: 1.5rem;
+            background: rgba(0, 20, 40, 0.5);
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary);
+        }
+
         /* AI Console Button */
         #toggleConsoleBtn {
             position: fixed;
@@ -565,7 +609,7 @@
             box-shadow: 0 8px 30px rgba(138, 43, 226, 0.6);
         }
 
-        /* Console styles (from previous implementation) */
+        /* Console styles - Mobile Optimized */
         #agentConsole {
             position: fixed;
             top: 0;
@@ -684,40 +728,53 @@
             border-bottom-left-radius: 3px;
         }
 
+        /* FIXED CONSOLE INPUT CONTAINER */
         #consoleInputContainer {
-            padding: 1.5rem;
+            padding: 15px;
             border-top: 1px solid rgba(0, 243, 255, 0.2);
             background: rgba(10, 20, 40, 0.9);
             display: flex;
-            gap: 12px;
+            gap: 10px;
+            align-items: center;
+            position: relative;
         }
-        #consoleInputContainer input {
+
+        #consoleUserInput {
             flex: 1;
-            padding: 15px 20px;
-            border-radius: 30px;
+            padding: 12px 15px;
+            border-radius: 25px;
             border: 1px solid rgba(0, 243, 255, 0.3);
             background: rgba(20, 35, 60, 0.8);
             color: var(--text-light);
-            font-size: 1rem;
+            font-size: 0.95rem;
             outline: none;
             font-family: 'Segoe UI', sans-serif;
+            transition: all 0.3s ease;
+            min-width: 0; /* Prevents input from overflowing */
         }
-        #consoleInputContainer input:focus {
+
+        #consoleUserInput:focus {
             border-color: var(--secondary);
             box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
         }
-        #consoleInputContainer button {
-            padding: 15px 25px;
-            border-radius: 30px;
+
+        #consoleSendButton {
+            padding: 12px 25px;
+            border-radius: 25px;
             border: none;
             background: linear-gradient(90deg, var(--secondary), #00b8e6);
             color: var(--primary);
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            min-width: 80px;
+            font-size: 0.95rem;
         }
-        #consoleInputContainer button:hover {
+
+        #consoleSendButton:hover {
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 243, 255, 0.3);
         }
 
         /* Workspace Status Elements */
@@ -877,6 +934,26 @@
             .industries-grid {
                 grid-template-columns: 1fr;
             }
+            
+            /* MOBILE FIX: Stack input and button vertically */
+            #consoleInputContainer {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px;
+            }
+            
+            #consoleUserInput {
+                width: 100%;
+                padding: 14px 18px;
+                font-size: 1rem;
+            }
+            
+            #consoleSendButton {
+                width: 100%;
+                padding: 14px 18px;
+                font-size: 1rem;
+                min-width: 100%;
+            }
         }
 
         @media (max-width: 480px) {
@@ -895,6 +972,34 @@
                 font-size: 0.9rem;
                 bottom: 20px;
                 right: 20px;
+            }
+            
+            /* Extra small devices optimization */
+            #consoleInputContainer {
+                padding: 12px;
+            }
+            
+            #consoleUserInput {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+            }
+            
+            #consoleSendButton {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+            }
+            
+            /* Shorten placeholder text for mobile */
+            #consoleUserInput::placeholder {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            /* Very small phones */
+            #consoleUserInput::placeholder {
+                content: "Ask CEO...";
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -1075,7 +1180,60 @@
             </div>
         </section>
 
-        <!-- Additional sections would continue here... -->
+        <!-- Travel trends article -->
+        <section class="trends-section" id="trends">
+            <h2 class="section-title">AI in ASEAN Tourism</h2>
+            
+            <div class="trends-article">
+                <div class="article-header">
+                    <h3>5 major trends set to shape travel in 2026</h3>
+                    <div class="article-meta">
+                        <div>
+                            <strong>Published</strong> Thu, Dec 25 2025 1:10 AM EST<br>
+                            <strong>Updated</strong> Thu, Dec 25 2025 1:36 AM EST
+                        </div>
+                        <div>
+                            <strong>Authors:</strong> Kaela Ling, Monica Pitrelli
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-content">
+                    <p style="margin-bottom: 1.5rem; line-height: 1.7; font-size: 1.1rem;">Traveling is no longer just about the destination – or even the journey. It's about the experience you walk away with. Since the end of Covid, experience‑led travel has continued to evolve, shifting away from checking off landmarks and more towards meaningful trips that help travelers connect with the people and places they visit.</p>
+                    
+                    <div class="trend-list">
+                        <div class="trend-item">
+                            <h4>1. The anti-tourist</h4>
+                            <p>To better experience local culture, avoid contributing to overtourism, and potentially save money, travelers are increasingly avoiding peak seasons and heavily visited destinations. This shift is fueling the rise of "secondary cities" across ASEAN like Chiang Rai (Thailand), Malacca (Malaysia), and Siem Reap (Cambodia).</p>
+                        </div>
+                        
+                        <div class="trend-item">
+                            <h4>2. 'Decision detox' holidays</h4>
+                            <p>Today's travelers are mentally exhausted and increasingly outsourcing planning to AI agents that offer personalized, all-inclusive packages. As cognitive overload becomes a defining feature of modern life, decision-light travel is becoming a core expectation.</p>
+                        </div>
+                        
+                        <div class="trend-item">
+                            <h4>3. Wellness moves beyond spas</h4>
+                            <p>Wellness travel has evolved from spa packages to science-backed longevity programs and mental health-focused trips. In ASEAN, this includes meditation retreats in Thailand, traditional healing in Bali, and jungle wellness experiences in Malaysia.</p>
+                        </div>
+                        
+                        <div class="trend-item">
+                            <h4>4. Nostalgic travel</h4>
+                            <p>Younger travelers are seeking vacations that take them down memory lane, while new retirees are embracing "golden gap year" trips across Southeast Asia, taking extended journeys that are more adventurous than retiree trips of the past.</p>
+                        </div>
+                        
+                        <div class="trend-item">
+                            <h4>5. AI in hotel service</h4>
+                            <p>Hotels are using AI to predict guest wants before they arrive, personalizing stays with unprecedented precision. In ASEAN, AI agents can customize everything from room amenities to cultural experiences based on individual preferences.</p>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 2rem; padding: 1.5rem; background: rgba(0, 243, 255, 0.05); border-radius: 10px; border-left: 4px solid var(--accent);">
+                        <strong>AGEANTiC Insight:</strong> Our tourism AI agents are designed specifically for ASEAN's diverse markets, helping hotels, travel agencies, and destinations implement these trends through personalized guest experiences, sustainable tourism management, and intelligent resource allocation.
+                    </p>
+                </div>
+            </div>
+        </section>
 
     </div>
 
@@ -1125,7 +1283,7 @@
     <!-- CEO Console Button -->
     <button id="toggleConsoleBtn">💬 Speak to the CEO</button>
 
-    <!-- CEO Console (from previous implementation) -->
+    <!-- CEO Console -->
     <div id="agentConsole">
         <div class="console-header">
             <h2><span class="agent-icon">🤖</span> AGEANTiC Executive Agent <span class="ceo-badge">CEO MODE</span></h2>
@@ -1140,8 +1298,8 @@
                     </div>
                 </div>
                 <div class="console-input-container" id="consoleInputContainer">
-                    <input type="text" id="consoleUserInput" placeholder="Delegate a task or ask for strategic insight..." autocomplete="off">
-                    <button id="consoleSendButton">Execute</button>
+                    <input type="text" id="consoleUserInput" placeholder="Ask the CEO a question..." autocomplete="off">
+                    <button id="consoleSendButton">Send</button>
                 </div>
             </div>
             <div class="console-workspace" id="agentWorkspace">
@@ -1221,7 +1379,7 @@
             }
         });
 
-        // CEO Console functionality (from previous implementation)
+        // CEO Console functionality
         const toggleConsoleBtn = document.getElementById('toggleConsoleBtn');
         const agentConsole = document.getElementById('agentConsole');
         const closeConsoleBtn = document.getElementById('closeConsole');
@@ -1373,6 +1531,18 @@
             }
         });
 
+        // Mobile console optimization
+        function optimizeConsoleForMobile() {
+            const isMobile = window.innerWidth <= 768;
+            
+            // Update placeholder text for mobile
+            if (isMobile && consoleUserInput.placeholder.length > 15) {
+                consoleUserInput.placeholder = "Ask CEO...";
+            } else if (!isMobile && consoleUserInput.placeholder === "Ask CEO...") {
+                consoleUserInput.placeholder = "Ask the CEO a question...";
+            }
+        }
+
         // Initialize background particles
         createParticles();
 
@@ -1395,8 +1565,46 @@
             });
         });
 
+        // Optimize console on resize
+        window.addEventListener('resize', optimizeConsoleForMobile);
+        
+        // Initialize console optimization
+        optimizeConsoleForMobile();
+
+        // Test mobile layout
+        function testMobileLayout() {
+            console.log('Mobile Layout Test:');
+            console.log(`- Window width: ${window.innerWidth}px`);
+            console.log(`- Input visible: ${consoleUserInput.offsetWidth > 50 ? 'YES' : 'NO'}`);
+            console.log(`- Button visible: ${consoleSendButton.offsetWidth > 70 ? 'YES' : 'NO'}`);
+            console.log(`- Button accessible: ${consoleSendButton.offsetHeight > 30 ? 'YES' : 'NO'}`);
+        }
+
+        // Run test on load
+        window.addEventListener('load', () => {
+            setTimeout(testMobileLayout, 1000);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
         // SEO logging
-        console.log('AGEANTiC Futuristic Website loaded with enhanced dynamic background and slide navigation.');
+        console.log('AGEANTiC Website loaded with mobile-optimized console input.');
     </script>
 </body>
 </html>
