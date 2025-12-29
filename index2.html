@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGEANTiC - Agentic AI for ASEAN | Autonomous AI Agents for All Industries</title>
+    <meta name="description" content="AGEANTiC develops autonomous AI agents for all industries across ASEAN countries. We provide agentic AI solutions for finance, real estate, education, healthcare, import/export, marketing, logistics, agriculture, and legal sectors across Southeast Asia.">
+    <meta name="keywords" content="AI agents, Agentic AI, ASEAN AI, autonomous agents, AI for finance, AI real estate, AI education, AI healthcare, Thailand AI, Malaysia AI, Cambodia AI, Laos AI, Southeast Asia AI">
+    <meta name="author" content="AGEANTiC">
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="AGEANTiC - Agentic AI Solutions for ASEAN">
+    <meta property="og:description" content="Developing autonomous AI agents for all major industries across ASEAN countries with futuristic AI solutions.">
+    <meta property="og:type" content="website">
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AGEANTiC",
+      "url": "https://ageantic-ai.com",
+      "logo": "https://ageantic-ai.com/logo.png",
+      "description": "ASEAN-focused autonomous AI agent development company",
+      "sameAs": [
+        "https://twitter.com/ageantic",
+        "https://linkedin.com/company/ageantic"
+      ],
+      "areaServed": ["TH", "MY", "KH", "LA", "VN", "SG", "ID", "PH", "MM", "BN"],
+      "serviceType": "Artificial Intelligence Development"
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        :root {
+            --primary: #0a0a12;
+            --secondary: #00f3ff;
+            --accent: #8a2be2;
+            --accent-glow: rgba(138, 43, 226, 0.3);
+            --text-light: #f0f8ff;
+            --text-dim: #a0b8d0;
+            --card-bg: rgba(16, 18, 30, 0.85);
+            --card-border: rgba(0, 243, 255, 0.15);
+            --glow: 0 0 30px rgba(0, 243, 255, 0.4);
+            --menu-bg: rgba(10, 12, 20, 0.95);
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text-light);
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Ultra-futuristic dynamic background */
+        #dynamic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(20, 20, 60, 0.8) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(40, 10, 60, 0.6) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(10, 30, 50, 0.9) 0%, #0a0a12 100%);
+            overflow: hidden;
+        }
+
+        /* Animated grid */
+        .grid-container {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background-image: 
+                linear-gradient(var(--glass-border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--glass-border) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridMove 40s linear infinite;
+            opacity: 0.2;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-30px, -30px) rotate(0.5deg); }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+            opacity: 0;
+            animation: particleFloat 20s infinite linear;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% { transform: translateY(-100px) translateX(100px) scale(1); opacity: 0; }
+        }
+
+        /* Neural network connections */
+        .neural-path {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+            transform-origin: left center;
+            opacity: 0.1;
+            animation: pulseGlow 4s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.1; box-shadow: 0 0 5px var(--secondary); }
+            50% { opacity: 0.3; box-shadow: 0 0 15px var(--secondary); }
+        }
+
+        /* Holographic orbs */
+        .holographic-orb {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            filter: blur(20px);
+            opacity: 0.1;
+            animation: orbFloat 25s infinite ease-in-out;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(100px, -50px) scale(1.2); }
+            50% { transform: translate(-50px, 80px) scale(0.8); }
+            75% { transform: translate(80px, 100px) scale(1.1); }
+        }
+
+        /* Header with futuristic design */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            background: rgba(10, 12, 20, 0.7);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.5rem;
+            box-shadow: var(--glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(30deg); }
+        }
+
+        /* Menu icon with transformation */
+        .menu-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .menu-icon:hover {
+            background: rgba(0, 243, 255, 0.1);
+            border-color: var(--secondary);
+            box-shadow: var(--glow);
+        }
+
+        .menu-icon span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--secondary);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .menu-icon.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .menu-icon.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-icon.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Slide-out menu */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100vh;
+            background: var(--menu-bg);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            padding: 100px 40px 40px;
+            transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-left: 1px solid rgba(0, 243, 255, 0.2);
+            box-shadow: -10px 0 50px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+        }
+
+        .slide-menu.active {
+            right: 0;
+        }
+
+        .slide-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+        }
+
+        .menu-section {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.5s ease;
+        }
+
+        .slide-menu.active .menu-section {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .menu-section:nth-child(1) { transition-delay: 0.1s; }
+        .menu-section:nth-child(2) { transition-delay: 0.2s; }
+        .menu-section:nth-child(3) { transition-delay: 0.3s; }
+        .menu-section:nth-child(4) { transition-delay: 0.4s; }
+
+        .menu-section h2 {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-section h2 i {
+            font-size: 1.2rem;
+        }
+
+        .menu-section p {
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .sector-item {
+            background: rgba(0, 243, 255, 0.05);
+            border: 1px solid rgba(0, 243, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .sector-item:hover {
+            background: rgba(0, 243, 255, 0.1);
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .services-list {
+            list-style: none;
+        }
+
+        .services-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .services-list li:hover {
+            color: var(--secondary);
+            padding-left: 10px;
+        }
+
+        .services-list li::before {
+            content: '▸';
+            color: var(--secondary);
+            font-size: 0.8rem;
+        }
+
+        /* Main content */
+        .main-content {
+            padding-top: 100px;
+        }
+
+        /* Hero section */
+        .hero {
+            padding: 8rem 5% 6rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(0, 243, 255, 0.1) 0%, transparent 70%);
+            filter: blur(60px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-dim);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        .asean-countries {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .country-tag {
+            background: var(--card-bg);
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-weight: 500;
+        }
+
+        .country-tag:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            box-shadow: var(--glow);
+            background: rgba(16, 18, 30, 0.95);
+        }
+
+        /* Industries section */
+        .industries-section {
+            max-width: 1400px;
+            margin: 6rem auto;
+            padding: 0 5%;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .industry-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--card-border);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .industry-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .industry-card:hover::before {
+            left: 100%;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--secondary);
+            box-shadow: var(--glow);
+        }
+
+        .industry-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(0, 243, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            color: var(--secondary);
+            border: 2px solid rgba(0, 243, 255, 0.3);
+        }
+
+        /* Travel trends section */
+        .trends-section {
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 5%;
+        }
+
+        .trends-article {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .article-header {
+            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-dim);
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .trend-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .trend-item {
+            padding: 1.5rem;
+            background: rgba(0, 20, 40, 0.5);
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        /* AI Console Button */
+        #toggleConsoleBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: var(--primary);
+            border: none;
+            border-radius: 50px;
+            padding: 18px 30px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 5px 25px rgba(138, 43, 226, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #toggleConsoleBtn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(138, 43, 226, 0.6);
+        }
+
+        /* FIXED CONSOLE STYLES - COMPLETELY FIXED SCROLLING */
+        #agentConsole {
+            position: fixed;
+            top: 0;
+            right: -850px;
+            width: 800px;
+            height: 100vh;
+            background: var(--primary);
+            border-left: 1px solid rgba(0, 243, 255, 0.3);
+            box-shadow: -10px 0 50px rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+        
+        #agentConsole.active {
+            right: 0;
+        }
+        
+        .console-header {
+            padding: 1.5rem;
+            background: rgba(10, 20, 40, 0.95);
+            border-bottom: 1px solid rgba(0, 243, 255, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        
+        .console-header h2 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--secondary);
+            font-size: 1.3rem;
+        }
+        
+        .ceo-badge {
+            background: rgba(0, 243, 255, 0.15);
+            color: var(--secondary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        #closeConsole {
+            background: none;
+            border: none;
+            color: var(--text-dim);
+            font-size: 1.8rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 5px;
+            transition: color 0.3s;
+        }
+        
+        #closeConsole:hover {
+            color: var(--text-light);
+        }
+
+        .console-body {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+        }
+        
+        .console-chat {
+            flex: 1;
+            border-right: 1px solid rgba(0, 243, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            background: rgba(5, 10, 20, 0.7);
+            min-height: 0;
+        }
+        
+        .console-workspace {
+            width: 45%;
+            background: rgba(15, 25, 45, 0.9);
+            padding: 1.5rem;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #a0e7ff;
+            min-height: 0;
+        }
+        
+        .workspace-title {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0, 243, 255, 0.3);
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* FIXED CHAT CONTAINER */
+        #consoleChatContainer {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-height: 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        #consoleChatContainer::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        #consoleChatContainer::-webkit-scrollbar-track {
+            background: rgba(0, 243, 255, 0.05);
+        }
+        
+        #consoleChatContainer::-webkit-scrollbar-thumb {
+            background: rgba(0, 243, 255, 0.3);
+            border-radius: 3px;
+        }
+        
+        #consoleChatContainer::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 243, 255, 0.5);
+        }
+        
+        .console-message {
+            max-width: 85%;
+            padding: 1rem 1.2rem;
+            border-radius: 15px;
+            line-height: 1.5;
+            animation: messageAppear 0.3s ease;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        @keyframes messageAppear {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .console-user {
+            align-self: flex-end;
+            background: linear-gradient(135deg, var(--accent), #5a43ff);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .console-agent {
+            align-self: flex-start;
+            background: rgba(20, 35, 60, 0.8);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            border-bottom-left-radius: 5px;
+        }
+
+        /* FIXED INPUT CONTAINER */
+        .console-input-container {
+            padding: 15px;
+            border-top: 1px solid rgba(0, 243, 255, 0.2);
+            background: rgba(10, 20, 40, 0.9);
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        #consoleUserInput {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 25px;
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            background: rgba(20, 35, 60, 0.8);
+            color: var(--text-light);
+            font-size: 0.95rem;
+            outline: none;
+            font-family: 'Segoe UI', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        #consoleUserInput:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+        }
+
+        #consoleSendButton {
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: none;
+            background: linear-gradient(90deg, var(--secondary), #00b8e6);
+            color: var(--primary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            min-width: 80px;
+            font-size: 0.95rem;
+        }
+
+        #consoleSendButton:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 243, 255, 0.3);
+        }
+
+        /* Workspace Status Elements */
+        .workspace-log {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(0, 20, 40, 0.5);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .log-timestamp {
+            color: #8ba0b4;
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .log-content {
+            color: #a0e7ff;
+            white-space: pre-wrap;
+            line-height: 1.4;
+            font-size: 0.85rem;
+        }
+        
+        .log-thought { border-left-color: #ffb347; }
+        .log-action { border-left-color: #4ade80; }
+        .log-tool { border-left-color: #7b61ff; }
+        .log-result { border-left-color: #00f3ff; }
+
+        .workspace-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+            padding: 10px;
+            background: rgba(0, 30, 60, 0.6);
+            border-radius: 8px;
+        }
+        
+        .status-pulse {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #4ade80;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(5, 8, 15, 0.95);
+            padding: 4rem 5% 2rem;
+            margin-top: 8rem;
+            border-top: 1px solid rgba(0, 243, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .footer-column h3 {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-column a {
+            color: var(--text-dim);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            .section-title {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .slide-menu {
+                width: 350px;
+            }
+            #agentConsole {
+                width: 95%;
+                max-width: 600px;
+                right: -100%;
+            }
+            .console-workspace {
+                width: 100%;
+                height: 250px;
+                border-top: 1px solid rgba(0, 243, 255, 0.1);
+            }
+            .console-body {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .slide-menu {
+                width: 100%;
+                right: -100%;
+                padding: 100px 25px 40px;
+            }
+            .sectors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+            .console-header h2 {
+                font-size: 1.1rem;
+            }
+            .console-input-container {
+                flex-direction: row;
+                gap: 10px;
+                padding: 12px;
+            }
+            #consoleUserInput {
+                width: 100%;
+                padding: 12px 15px;
+                font-size: 0.95rem;
+            }
+            #consoleSendButton {
+                width: auto;
+                padding: 12px 20px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .country-tag {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+            .sectors-grid {
+                grid-template-columns: 1fr;
+            }
+            #toggleConsoleBtn {
+                padding: 15px 25px;
+                font-size: 0.9rem;
+                bottom: 20px;
+                right: 20px;
+            }
+            .console-message {
+                max-width: 95%;
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+            .console-input-container {
+                padding: 10px;
+                gap: 8px;
+            }
+            #consoleUserInput {
+                padding: 10px 12px;
+                font-size: 0.9rem;
+            }
+            #consoleSendButton {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Ultra-futuristic dynamic background -->
+    <div id="dynamic-bg">
+        <div class="grid-container"></div>
+        <!-- Neural paths -->
+        <div class="neural-path" style="top: 20%; left: 10%; width: 200px; transform: rotate(30deg);"></div>
+        <div class="neural-path" style="top: 60%; left: 70%; width: 250px; transform: rotate(-20deg);"></div>
+        <div class="neural-path" style="top: 80%; left: 20%; width: 180px; transform: rotate(45deg);"></div>
+        <!-- Holographic orbs -->
+        <div class="holographic-orb" style="width: 300px; height: 300px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+        <div class="holographic-orb" style="width: 200px; height: 200px; top: 70%; left: 80%; animation-delay: 5s;"></div>
+        <div class="holographic-orb" style="width: 250px; height: 250px; top: 40%; left: 90%; animation-delay: 10s;"></div>
+    </div>
+
+    <!-- Header with futuristic menu icon -->
+    <header>
+        <a href="#" class="logo">
+            <div class="logo-icon">A</div>
+            <span>AGEANTiC</span>
+        </a>
+        
+        <div class="menu-icon" id="menuIcon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    
+    <!-- Slide-out menu -->
+    <div class="slide-menu" id="slideMenu">
+        <div class="menu-section">
+            <h2><i>🚀</i> Our Mission</h2>
+            <p>To pioneer the agentic AI revolution across ASEAN by developing autonomous AI systems that transform industries, empower businesses, and accelerate Southeast Asia's digital future through ethical, localized, and cutting-edge artificial intelligence.</p>
+            <p>We envision a future where every ASEAN organization operates with intelligent AI agents that understand local contexts, languages, and business cultures.</p>
+        </div>
+        
+        <div class="menu-section">
+            <h2><i>👥</i> Who We Are</h2>
+            <p>AGEANTiC is a collective of AI researchers, engineers, ethicists, and industry specialists dedicated to building the next generation of autonomous AI agents. Our multidisciplinary team combines deep expertise in machine learning, ASEAN market dynamics, and ethical AI development.</p>
+            <p>Founded with a vision to make agentic AI accessible and relevant to Southeast Asia's unique challenges and opportunities.</p>
+        </div>
+        
+        <div class="menu-section">
+            <h2><i>🏢</i> Sectors</h2>
+            <p>We develop specialized AI agents for all major industries across ASEAN:</p>
+            <div class="sectors-grid">
+                <div class="sector-item">Finance & Banking</div>
+                <div class="sector-item">Real Estate</div>
+                <div class="sector-item">Education</div>
+                <div class="sector-item">Healthcare</div>
+                <div class="sector-item">Import/Export</div>
+                <div class="sector-item">Marketing</div>
+                <div class="sector-item">Logistics</div>
+                <div class="sector-item">Agriculture</div>
+                <div class="sector-item">Legal & Compliance</div>
+                <div class="sector-item">Cybersecurity</div>
+                <div class="sector-item">Tourism</div>
+                <div class="sector-item">Personal AI</div>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <h2><i>⚙️</i> Services</h2>
+            <p>Comprehensive agentic AI solutions for ASEAN businesses:</p>
+            <ul class="services-list">
+                <li>Custom Autonomous Agent Development</li>
+                <li>Multi-Agent System Orchestration</li>
+                <li>ASEAN Language & Culture Integration</li>
+                <li>Industry-Specific AI Workflow Automation</li>
+                <li>Legacy System AI Integration</li>
+                <li>Ethical AI Governance Frameworks</li>
+                <li>Continuous Agent Learning & Optimization</li>
+                <li>Cross-Border AI Compliance Solutions</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <!-- Hero section -->
+        <section class="hero" id="home">
+            <h1>ORCHESTRATING ASEAN'S AGENTIC FUTURE</h1>
+            <p>AGEANTiC develops autonomous AI agents for all major industries across ASEAN countries. From finance and real estate to healthcare, education, and logistics, we build the intelligent workforce powering Southeast Asia's digital transformation.</p>
+            
+            <div class="asean-countries">
+                <div class="country-tag">
+                    <span>🇹🇭</span>
+                    <span>Thailand</span>
+                </div>
+                <div class="country-tag">
+                    <span>🇲🇾</span>
+                    <span>Malaysia</span>
+                </div>
+                <div class="country-tag">
+                    <span>🇰🇭</span>
+                    <span>Cambodia</span>
+                </div>
+                <div class="country-tag">
+                    <span>🇱🇦</span>
+                    <span>Laos</span>
+                </div>
+                <div class="country-tag">
+                    <span>🇸🇬</span>
+                    <span>Singapore</span>
+                </div>
+                <div class="country-tag">
+                    <span>🇮🇩</span>
+                    <span>Indonesia</span>
+                </div>
+                <div class="country-tag">
+                    <span>🇵🇭</span>
+                    <span>Philippines</span>
+                </div>
+                <div class="country-tag">
+                    <span>🇻🇳</span>
+                    <span>Vietnam</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries section -->
+        <section class="industries-section" id="industries">
+            <h2 class="section-title">Industry Solutions</h2>
+            <p style="text-align: center; color: var(--text-dim); max-width: 900px; margin: 0 auto 2rem; line-height: 1.6; font-size: 1.1rem;">We develop specialized AI agents for all major sectors across ASEAN, delivering tailored solutions that understand local contexts, regulations, and market dynamics.</p>
+            
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">💰</div>
+                    <h3>Finance & Banking</h3>
+                    <p>Autonomous agents for fraud detection, personalized banking, risk assessment, regulatory compliance, and algorithmic trading across ASEAN financial markets.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">🏢</div>
+                    <h3>Real Estate</h3>
+                    <p>AI agents automating property valuation, market analysis, virtual tours, investment forecasting, and smart property management across ASEAN markets.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">🎓</div>
+                    <h3>Education</h3>
+                    <p>Personalized learning agents, automated tutoring systems, administrative automation, and adaptive educational content for ASEAN's diverse learning environments.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">🏥</div>
+                    <h3>Healthcare</h3>
+                    <p>Diagnostic support agents, patient management automation, medical records processing, telemedicine enhancement, and personalized treatment planning.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">🚢</div>
+                    <h3>Import/Export</h3>
+                    <p>AI agents automating customs documentation, logistics coordination, tariff calculation, compliance checking, and supply chain optimization for cross-border trade.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">📢</div>
+                    <h3>Marketing</h3>
+                    <p>AI-driven campaign optimization, consumer sentiment analysis, hyper-local targeting, content generation, and ROI prediction for ASEAN markets.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">📦</div>
+                    <h3>Logistics</h3>
+                    <p>Route optimization, warehouse automation, inventory management, predictive delivery scheduling, and end-to-end supply chain visibility agents.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">🌱</div>
+                    <h3>Agriculture</h3>
+                    <p>Crop monitoring drones with AI analysis, yield prediction, smart irrigation control, pest detection, and supply chain optimization for ASEAN's agricultural sector.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Travel trends article -->
+        <section class="trends-section" id="trends">
+            <h2 class="section-title">AI in ASEAN Tourism</h2>
+            
+            <div class="trends-article">
+                <div class="article-header">
+                    <h3>5 major trends set to shape travel in 2026</h3>
+                    <div class="article-meta">
+                        <div>
+                            <strong>Published</strong> Thu, Dec 25 2025 1:10 AM EST<br>
+                            <strong>Updated</strong> Thu, Dec 25 2025 1:36 AM EST
+                        </div>
+                        <div>
+                            <strong>Authors:</strong> Kaela Ling, Monica Pitrelli
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-content">
+                    <p style="margin-bottom: 1.5rem; line-height: 1.7; font-size: 1.1rem;">Traveling is no longer just about the destination – or even the journey. It's about the experience you walk away with. Since the end of Covid, experience‑led travel has continued to evolve, shifting away from checking off landmarks and more towards meaningful trips that help travelers connect with the people and places they visit.</p>
+                    
+                    <div class="trend-list">
+                        <div class="trend-item">
+                            <h4>1. The anti-tourist</h4>
+                            <p>To better experience local culture, avoid contributing to overtourism, and potentially save money, travelers are increasingly avoiding peak seasons and heavily visited destinations. This shift is fueling the rise of "secondary cities" across ASEAN like Chiang Rai (Thailand), Malacca (Malaysia), and Siem Reap (Cambodia).</p>
+                        </div>
+                        
+                        <div class="trend-item">
+                            <h4>2. 'Decision detox' holidays</h4>
+                            <p>Today's travelers are mentally exhausted and increasingly outsourcing planning to AI agents that offer personalized, all-inclusive packages. As cognitive overload becomes a defining feature of modern life, decision-light travel is becoming a core expectation.</p>
+                        </div>
+                        
+                        <div class="trend-item">
+                            <h4>3. Wellness moves beyond spas</h4>
+                            <p>Wellness travel has evolved from spa packages to science-backed longevity programs and mental health-focused trips. In ASEAN, this includes meditation retreats in Thailand, traditional healing in Bali, and jungle wellness experiences in Malaysia.</p>
+                        </div>
+                        
+                        <div class="trend-item">
+                            <h4>4. Nostalgic travel</h4>
+                            <p>Younger travelers are seeking vacations that take them down memory lane, while new retirees are embracing "golden gap year" trips across Southeast Asia, taking extended journeys that are more adventurous than retiree trips of the past.</p>
+                        </div>
+                        
+                        <div class="trend-item">
+                            <h4>5. AI in hotel service</h4>
+                            <p>Hotels are using AI to predict guest wants before they arrive, personalizing stays with unprecedented precision. In ASEAN, AI agents can customize everything from room amenities to cultural experiences based on individual preferences.</p>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 2rem; padding: 1.5rem; background: rgba(0, 243, 255, 0.05); border-radius: 10px; border-left: 4px solid var(--accent);">
+                        <strong>AGEANTiC Insight:</strong> Our tourism AI agents are designed specifically for ASEAN's diverse markets, helping hotels, travel agencies, and destinations implement these trends through personalized guest experiences, sustainable tourism management, and intelligent resource allocation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">AGEANTiC</div>
+                <p style="color: var(--text-dim); max-width: 320px; line-height: 1.6;">Developing the autonomous AI agents that power ASEAN's digital future across all major industries with cutting-edge agentic AI solutions.</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Solutions</h3>
+                    <a href="#industries">Finance & Banking</a>
+                    <a href="#industries">Real Estate</a>
+                    <a href="#industries">Education</a>
+                    <a href="#industries">Healthcare</a>
+                    <a href="#industries">Import/Export</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>ASEAN</h3>
+                    <a href="#">Thailand</a>
+                    <a href="#">Malaysia</a>
+                    <a href="#">Cambodia</a>
+                    <a href="#">Laos & Vietnam</a>
+                    <a href="#">All Countries</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="#" onclick="openMenu()">Our Mission</a>
+                    <a href="#" onclick="openMenu()">Who We Are</a>
+                    <a href="#" onclick="openMenu()">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2025 AGEANTiC AI Solutions. All Rights Reserved. | ASEAN-Focused Agentic AI Development</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Privacy Policy | Terms of Service | AI Ethics Commitment</p>
+        </div>
+    </footer>
+
+    <!-- CEO Console Button -->
+    <button id="toggleConsoleBtn">💬 Speak to the CEO</button>
+
+    <!-- CEO Console -->
+    <div id="agentConsole">
+        <div class="console-header">
+            <h2><span class="agent-icon">🤖</span> AGEANTiC Executive Agent <span class="ceo-badge">CEO MODE</span></h2>
+            <button id="closeConsole">&times;</button>
+        </div>
+        <div class="console-body">
+            <div class="console-chat">
+                <div id="consoleChatContainer">
+                    <div class="console-message console-agent">
+                        <strong>AGEANTiC Executive Agent</strong><br>
+                        Good day. I am the executive AI agent for AGEANTiC, operating with the strategic perspective of the CEO. I oversee our AI agent development across all ASEAN industries. You can delegate tasks, ask for strategic insights, or request market analyses. How can I assist in driving our mission forward?
+                    </div>
+                </div>
+                <div class="console-input-container">
+                    <input type="text" id="consoleUserInput" placeholder="Ask the CEO a question..." autocomplete="off">
+                    <button id="consoleSendButton">Send</button>
+                </div>
+            </div>
+            <div class="console-workspace" id="agentWorkspace">
+                <div class="workspace-title">🛠️ Agent Workspace & Reasoning</div>
+                <div class="workspace-status">
+                    <div class="status-pulse"></div>
+                    <span>Agent is online and ready for task delegation.</span>
+                </div>
+                <div id="workspaceLogs">
+                    <div class="workspace-log log-action">
+                        <div class="log-timestamp">System Initialized</div>
+                        <div class="log-content">Executive Agent activated with CEO-level strategic context. Access to cross-industry market analysis, strategic planning, and multi-sector task execution modules is online.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dynamic background generation
+        function createParticles() {
+            const bg = document.getElementById('dynamic-bg');
+            
+            // Create floating particles
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 4 + 1;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 20;
+                const duration = Math.random() * 10 + 20;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${left}%`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                bg.appendChild(particle);
+            }
+        }
+
+        // Menu functionality
+        const menuIcon = document.getElementById('menuIcon');
+        const slideMenu = document.getElementById('slideMenu');
+        
+        function toggleMenu() {
+            const isActive = menuIcon.classList.contains('active');
+            menuIcon.classList.toggle('active');
+            slideMenu.classList.toggle('active');
+            
+            // Prevent scrolling when menu is open
+            document.body.style.overflow = isActive ? '' : 'hidden';
+        }
+        
+        function openMenu() {
+            menuIcon.classList.add('active');
+            slideMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        menuIcon.addEventListener('click', toggleMenu);
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.slide-menu a, .sector-item').forEach(item => {
+            item.addEventListener('click', () => {
+                menuIcon.classList.remove('active');
+                slideMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!slideMenu.contains(e.target) && !menuIcon.contains(e.target) && slideMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        // CEO Console functionality
+        const toggleConsoleBtn = document.getElementById('toggleConsoleBtn');
+        const agentConsole = document.getElementById('agentConsole');
+        const closeConsoleBtn = document.getElementById('closeConsole');
+        const consoleChatContainer = document.getElementById('consoleChatContainer');
+        const consoleUserInput = document.getElementById('consoleUserInput');
+        const consoleSendButton = document.getElementById('consoleSendButton');
+        const workspaceLogs = document.getElementById('workspaceLogs');
+
+        // OpenRouter API configuration
+        const OPENROUTER_API_KEY = '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';
+        const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
+
+        // CEO Agent System Prompt
+        const CEO_SYSTEM_PROMPT = `You are the CEO and executive AI agent of AGEANTiC, a company pioneering autonomous AI agents for all major industries across ASEAN nations. Your expertise spans finance, real estate, education, healthcare, import/export, marketing, logistics, agriculture, legal, cybersecurity, and personal AI. Your tone is strategic, visionary, and decisive. You provide actionable insights, delegate conceptually, and think in multi-step plans. When users speak to you, they are getting the strategic perspective of the company's leadership.`;
+
+        let consoleMessageHistory = [
+            { role: "system", content: CEO_SYSTEM_PROMPT },
+            { role: "assistant", content: "Good day. I am the executive AI agent for AGEANTiC, operating with the strategic perspective of the CEO. I oversee our AI agent development across all ASEAN industries. You can delegate tasks, ask for strategic insights, or request market analyses. How can I assist in driving our mission forward?" }
+        ];
+
+        // Console Toggle
+        toggleConsoleBtn.addEventListener('click', () => {
+            agentConsole.classList.add('active');
+            // Focus on input when console opens
+            setTimeout(() => {
+                consoleUserInput.focus();
+                scrollToBottom();
+            }, 100);
+        });
+        
+        closeConsoleBtn.addEventListener('click', () => {
+            agentConsole.classList.remove('active');
+        });
+
+        // Close console with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && agentConsole.classList.contains('active')) {
+                agentConsole.classList.remove('active');
+            }
+        });
+
+        // Scroll to bottom function
+        function scrollToBottom() {
+            consoleChatContainer.scrollTop = consoleChatContainer.scrollHeight;
+            workspaceLogs.scrollTop = workspaceLogs.scrollHeight;
+        }
+
+        // Add a log entry to the workspace
+        function addWorkspaceLog(type, content) {
+            const logDiv = document.createElement('div');
+            logDiv.className = `workspace-log log-${type}`;
+
+            const now = new Date();
+            const timestamp = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
+
+            logDiv.innerHTML = `
+                <div class="log-timestamp">${timestamp}</div>
+                <div class="log-content">${content}</div>
+            `;
+            workspaceLogs.appendChild(logDiv);
+            scrollToBottom();
+        }
+
+        // Simulate agent thinking with steps
+        function simulateThinkingSteps(question) {
+            addWorkspaceLog("thought", "🧠 Analyzing user request: \"" + question + "\"");
+            addWorkspaceLog("thought", "1. Parsing intent and strategic context...");
+            addWorkspaceLog("thought", "2. Retrieving relevant cross-industry market data and company priorities...");
+            addWorkspaceLog("thought", "3. Formulating multi-step strategic response with industry-specific insights...");
+
+            // Simulate a potential tool call
+            addWorkspaceLog("tool", "⚙️ Tool Call: Accessing internal 'ASEAN Multi-Industry Intelligence' database...");
+            setTimeout(() => {
+                addWorkspaceLog("result", "✅ Data retrieved: Latest market growth figures, regulatory updates, and competitive analysis across all relevant sectors.");
+            }, 600);
+        }
+
+        // Add a message to the console chat
+        function addConsoleMessage(content, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `console-message ${isUser ? 'console-user' : 'console-agent'}`;
+
+            if (isUser) {
+                messageDiv.innerHTML = `<strong>You</strong><br>${content}`;
+                consoleMessageHistory.push({ role: "user", content: content });
+            } else {
+                messageDiv.innerHTML = `<strong>AGEANTiC Executive Agent</strong><br>${content}`;
+                consoleMessageHistory.push({ role: "assistant", content: content });
+            }
+
+            consoleChatContainer.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        // Get AI response from OpenRouter for console
+        async function getExecutiveAIResponse(userMessage) {
+            simulateThinkingSteps(userMessage);
+
+            // Prepare the API request
+            const requestData = {
+                model: 'mistralai/mistral-7b-instruct:free',
+                messages: consoleMessageHistory,
+                max_tokens: 800
+            };
+
+            try {
+                const response = await fetch(OPENROUTER_API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
+                        'HTTP-Referer': 'https://ageantic-ai.com',
+                        'X-Title': 'AGEANTiC Executive Agent'
+                    },
+                    body: JSON.stringify(requestData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+
+                const data = await response.json();
+                
+                // Add a result log
+                setTimeout(() => {
+                    addWorkspaceLog("result", "✅ Strategic analysis complete. Formulating CEO-level response with actionable insights.");
+                }, 1200);
+
+                // Add response to chat
+                setTimeout(() => {
+                    const aiResponse = data.choices && data.choices[0] && data.choices[0].message 
+                        ? data.choices[0].message.content 
+                        : 'As CEO of AGEANTiC, I would analyze this request through our strategic framework. Based on our ASEAN market position, I recommend focusing on cross-industry AI solutions that leverage our strengths in localized agent development and regulatory compliance.';
+                    addConsoleMessage(aiResponse);
+                }, 1500);
+                
+            } catch (error) {
+                console.error('Error calling OpenRouter API for console:', error);
+                
+                // Fallback response
+                setTimeout(() => {
+                    addWorkspaceLog("result", "⚠️ Using cached strategic insights for rapid response.");
+                    addConsoleMessage("As AGEANTiC's executive agent, I would approach this by: 1) Assessing market readiness across relevant ASEAN countries, 2) Evaluating competitive landscape in the target industry, 3) Aligning with our core competencies in autonomous agent development, and 4) Creating a phased implementation roadmap with clear KPIs. For specific details on your query, our team would conduct deeper market analysis.");
+                }, 1500);
+            }
+        }
+
+        // Handle console message sending
+        function sendConsoleMessage() {
+            const message = consoleUserInput.value.trim();
+            if (!message) return;
+            
+            // Add user message to console chat
+            addConsoleMessage(message, true);
+            
+            // Clear and refocus input
+            consoleUserInput.value = '';
+            consoleUserInput.focus();
+            
+            // Get AI response
+            getExecutiveAIResponse(message);
+        }
+
+        // Console event listeners
+        consoleSendButton.addEventListener('click', sendConsoleMessage);
+        consoleUserInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendConsoleMessage();
+            }
+        });
+
+        // Initialize background particles
+        createParticles();
+
+        // Interactive background effect
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            // Move neural paths slightly
+            document.querySelectorAll('.neural-path').forEach(path => {
+                const speed = 0.3;
+                const dx = (x - 0.5) * speed;
+                const dy = (y - 0.5) * speed;
+                
+                const currentTransform = path.style.transform || 'rotate(0deg)';
+                const rotateMatch = currentTransform.match(/rotate\(([^)]+)deg\)/);
+                const currentRotate = rotateMatch ? parseFloat(rotateMatch[1]) : 0;
+                
+                path.style.transform = `translate(${dx}px, ${dy}px) rotate(${currentRotate}deg)`;
+            });
+        });
+
+        // Add some sample messages to test scrolling
+        function addSampleMessages() {
+            // Add a few sample messages to demonstrate scrolling
+            setTimeout(() => {
+                addConsoleMessage("What's our Q2 strategy for the Malaysian fintech market?", true);
+                setTimeout(() => {
+                    addConsoleMessage("Our Q2 strategy for Malaysia focuses on three key areas: 1) Partnering with Islamic banking institutions for Sharia-compliant AI agents, 2) Developing fraud detection systems tailored to Malaysia's unique digital payment ecosystem, and 3) Creating regulatory compliance agents that understand Bank Negara Malaysia's requirements.", false);
+                    
+                    setTimeout(() => {
+                        addConsoleMessage("Can you elaborate on the education sector opportunities in Thailand?", true);
+                        setTimeout(() => {
+                            addConsoleMessage("Thailand's education sector presents significant opportunities: 1) The Ministry of Education's digital transformation initiative, 2) Growing demand for personalized learning in international schools, 3) Vocational training AI for Thailand's industrial sector, and 4) Language learning agents for ASEAN languages. Our initial focus should be on Bangkok and Chiang Mai where digital infrastructure is strongest.", false);
+                            
+                            setTimeout(() => {
+                                addConsoleMessage("What about healthcare AI in Vietnam?", true);
+                                setTimeout(() => {
+                                    addConsoleMessage("Vietnam's healthcare AI market is growing at 28% annually. Key opportunities include: 1) Telemedicine platforms for rural areas, 2) Diagnostic support for major hospitals in Hanoi and Ho Chi Minh City, 3) Patient management systems for private clinics, and 4) Pharmaceutical supply chain optimization. We should partner with Vinmec and other major healthcare providers.", false);
+                                }, 500);
+                            }, 500);
+                        }, 500);
+                    }, 500);
+                }, 500);
+            }, 1000);
+        }
+
+        // Add sample messages when console opens for first time
+        let consoleOpenedFirstTime = false;
+        toggleConsoleBtn.addEventListener('click', () => {
+            if (!consoleOpenedFirstTime) {
+                setTimeout(addSampleMessages, 500);
+                consoleOpenedFirstTime = true;
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Console scrolling test on load
+        window.addEventListener('load', () => {
+            console.log('AGEANTiC Website loaded with fixed scrolling.');
+            console.log('Chat console is fully functional on all devices.');
+        });
+    </script>
+</body>
+</html>
